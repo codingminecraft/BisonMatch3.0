@@ -118,7 +118,7 @@ def getStudentData(lnumber):
     student = None
     with closing(connection.cursor()) as cursor:
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM `lustudent` where `lnumber` = " + str(lnumber) + ";")
+        cursor.execute("SELECT * FROM `lustudent` where `lnumber` = '" + str(lnumber) + "';")
         student = cursor.fetchone()
     connection.close()
     return student
